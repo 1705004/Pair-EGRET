@@ -280,6 +280,8 @@ def run_experiment (root_dir, total_epochs, save_dir, experiment_num, model_file
         val_samples = total_samples[configs.train_size:]
         np.random.shuffle(train_samples)
         np.random.shuffle(val_samples)
+        train_val_samples = {'train_samples': train_samples, 'val_samples': val_samples}
+        pickle.dump (train_val_samples, open(save_dir + '/train_and_val_samples_final.pkl', 'wb'))
     else:
         with open(save_dir + '/train_and_val_samples_final.pkl', "rb") as f:
             samples = pickle.load(f)
@@ -510,8 +512,7 @@ def run_experiment (root_dir, total_epochs, save_dir, experiment_num, model_file
                     gzip.open(save_dir + '/experiment_number_' + str(experiment_num) + "/attention_scores.pkl.gz", "wb"))
     
     if not configs.SAVE_MODEL:
-        os.remove(save_dir+'/experiment_number_'+str(experiment_num)+
-                                '/model_{0}.dat'.format(experiment_num))
+        os.remove(save_dir+'/experiment_number_'+str(experiment_num)+'/model_{0}.dat'.format(experiment_num))
 
     print('Testing time:', time() - t0)
     print('Experiment complete.')

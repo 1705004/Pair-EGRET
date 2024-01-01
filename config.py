@@ -23,11 +23,11 @@ class DefaultConfig(object):
     
     with open ("inputs/{}/dataset_sizes.pkl".format(dataset_name), "rb") as file:
         dataset_sizes = pickle.load(file)
-        train_size, val_size, test_size = dataset_sizes.values()
+        train_size, val_size, test_size, max_residue_seq_length = dataset_sizes.values()
     
     total_proteins = train_size + val_size + test_size
     total_experiments_num = 1
-    total_epochs = 0 # set to 0 for only testing purpose
+    total_epochs = 1000 # set to 0 for only testing purpose
     
     patience_before_dropping_training = 50
 
