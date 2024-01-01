@@ -1,6 +1,6 @@
 # Pair-EGRET
 
-This repository contains the implementation of our paper "Pair-EGRET: Enhancing the prediction of protein-protein interaction sites through graph attention networks and protein language models". 
+This repository contains the implementation of our paper **"Pair-EGRET: Enhancing the prediction of protein-protein interaction sites through graph attention networks and protein language models"**. 
 
 ## Datasets
 Pair-EGRET was evaluated on three benchmark datasets: DBD5, Dockground, and MASIF. Training and test data used in this experiment can be found [**here**](https://zenodo.org/records/10449060). Save the *train.pkl.gz* and *test.pkl.gz* files of each dataset inside the corresponding *inputs/{dataset_name}* directory.
