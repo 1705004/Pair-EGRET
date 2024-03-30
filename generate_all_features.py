@@ -1,5 +1,5 @@
 from feature_generation import distance_and_angle_generator, hydrophobicity_generator, \
-    physicochemical_features_generator, ProtBERT_feature_generator, \
+    physicochemical_feature_generator, ProtBERT_feature_generator, \
     ProtXLNet_feature_generator, residue_accessibility_generator, label_generator
 
 from config import DefaultConfig
