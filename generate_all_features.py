@@ -20,9 +20,9 @@ def generate_all_features():
     print('hydro l done')
     hydrophobicity_generator.generate_hydrophobicity(input_dir='./inputs/', dataset_name=dataset_name, protein_type='r', binding_type=binding_type)
     print('hydro r done')
-    physicochemical_features_generator.generate_physicochemical_features(input_dir='./inputs/', dataset_name=dataset_name, protein_type='l', binding_type=binding_type)
+    physicochemical_feature_generator.generate_physicochemical_features(input_dir='./inputs/', dataset_name=dataset_name, protein_type='l', binding_type=binding_type)
     print('phychem l done')
-    physicochemical_features_generator.generate_physicochemical_features(input_dir='./inputs/', dataset_name=dataset_name, protein_type='r', binding_type=binding_type)
+    physicochemical_feature_generator.generate_physicochemical_features(input_dir='./inputs/', dataset_name=dataset_name, protein_type='r', binding_type=binding_type)
     print('phychem r done')
 
     ProtBERT_feature_generator.generate_protbert_features(input_dir='./inputs/', dataset_name=dataset_name, protein_type='l', binding_type=binding_type)
