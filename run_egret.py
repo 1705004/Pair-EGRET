@@ -23,7 +23,7 @@ import torch.utils.data.sampler as sampler
 import dgl
 
 from config import DefaultConfig
-from models.Pair_Egret import PairEgret
+from models.Pair_EGRET import PairEgret
 import data_generator_attention_visual as data_generator
 from data_generator_attention_visual import GraphCollate
 
@@ -268,7 +268,7 @@ def eval_epoch(model, loader, save_attention_scores=False):
 def run_experiment (root_dir, total_epochs, save_dir, experiment_num, model_file):
     patience_before_dropping_training = configs.patience_before_dropping_training
     Path(save_dir + '/experiment_number_' + str(experiment_num)).mkdir(parents=False, exist_ok=True)
-    set_seed(save_path_root=save_dir + '/experiment_number_' + str(experiment_num))
+    set_seed()
     
     train_dataSet = data_generator.dataSet(root_dir=root_dir, data_file_prefix='train')
     test_dataSet = data_generator.dataSet(root_dir=root_dir, data_file_prefix='test')
